@@ -19,4 +19,4 @@ embedding_model = OpenAIEmbeddings(api_key=constants.OPENAI_KEY)
 index_create = VectorstoreIndexCreator(embedding=embedding_model)
 index = index_create.from_loaders([loader])
 
-print(index.query(query))
+print(index.query(query, llm=ChatOpenAI))
